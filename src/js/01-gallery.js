@@ -10,16 +10,15 @@ const gallery = document.querySelector('.gallery');
 
 const markup = galleryItems
   .map(
-    image => `<li>
-  <a class="gallery__link" href="${image.original}">
+    image => `
+  <a class="gallery__item" href="${image.original}">
     <img
       class="gallery__image"
       src="${image.preview}"
-      data-source="${image.original}"
       alt="${image.description}"
     />
   </a>
-</li>`
+`
   )
   .join('');
 gallery.insertAdjacentHTML('afterbegin', markup);
