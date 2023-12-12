@@ -5,7 +5,7 @@ import throttle from 'lodash.throttle';
 const iframe = document.querySelector('iframe');
 const player = new Player(iframe);
 
-//funkcja zapisująca aktualny czas odtwarzania
+//funkcja- aktualny czas odtwarzania
 function getCurrentTime(data) {
   const currentTime = data;
   console.log(data.seconds);
@@ -14,7 +14,7 @@ function getCurrentTime(data) {
 //śledzenie zdarzenia timeupdate - aktualizacji czasu odtwarzania
 player.on('timeupdate', throttle(getCurrentTime, 1000));
 
-//wznaweianie odtwarzania od ostatnio zapisanego momentu
+//wznawianie odtwarzania od ostatniej zapisanej sekundy/minuty
 window.addEventListener('DOMContentLoaded', () => {
   try {
     const savedTime = JSON.parse(
